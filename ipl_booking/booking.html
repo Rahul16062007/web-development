@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.5;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    nav a {
+      margin-right: 16px;
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .inline-group label {
+      display: inline-block;
+      font-weight: normal;
+      margin-right: 14px;
+    }
+    .actions {
+      margin-top: 20px;
+    }
+    /* Highlights invalid fields once the user interacts with them */
+    input:user-invalid,
+    select:user-invalid {
+      border: 2px solid #c62828;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="booking.html">Book Tickets</a>
+  </nav>
+
+  <h1>IPL Match Ticket Booking</h1>
+  <p>Fill in your details below to reserve stadium tickets.</p>
+
+  <form action="#" method="git"></form>
+    <div class="field">
+      <label for="full-name">Full Name *</label>
+      <input
+        type="text"
+        id="full-name"
+        name="fullName"
+        placeholder="Enter your full name"
+        minlength="3"
+        maxlength="60"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="email">Email Address *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="name@example.com"
+        maxlength="100"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="phone">Phone Number (10 digits) *</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="9876543210"
+        pattern="[6-9][0-9]{9}"
+        minlength="10"
+        maxlength="10"
+        title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="match">Select Match *</label>
+      <select id="match" name="match" required>
+        <option value="">-- Choose a Match --</option>
+        <option value="rcb-vs-csk">RCB vs CSK - M. Chinnaswamy Stadium</option>
+        <option value="mi-vs-kkr">MI vs KKR - Wankhede Stadium</option>
+        <option value="dc-vs-rr">DC vs RR - Arun Jaitley Stadium</option>
+        <option value="gt-vs-srh">GT vs SRH - Narendra Modi Stadium</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="stand">Stand Category *</label>
+      <select id="stand" name="stand" required>
+        <option value="">-- Choose a Stand --</option>
+        <option value="general">General Stand (₹800)</option>
+        <option value="pavilion">Pavilion Terrace (₹2,500)</option>
+        <option value="corporate">Corporate Box (₹8,000)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="tickets">Number of Tickets (1 to 6) *</label>
+      <input
+        type="number"
+        id="tickets"
+        name="tickets"
+        min="1"
+        max="6"
+        step="1"
+        value="1"
+        required
+      />
+    </div>
+
+    <div class="field inline-group">
+      <label>Ticket Delivery Mode</label>
+      <label><input type="radio" name="delivery" value="m-ticket" checked /> M-Ticket (QR)</label>
+      <label><input type="radio" name="delivery" value="box-office" /> Stadium Box Office</label>
+    </div>
+
+    <div class="field inline-group">
+      <label>Additional Preferences</label>
+      <label><input type="checkbox" name="prefs" value="food-combo" /> Food &amp; Beverage Combo</label>
+      <label><input type="checkbox" name="prefs" value="parking" /> Two-Wheeler Parking</label>
+      <label><input type="checkbox" name="prefs" value="accessibility" /> Wheelchair Assistance</label>
+    </div>
+
+    <div class="field inline-group">
+      <label>
+        <input type="checkbox" name="terms" required />
+        I agree to stadium entry rules and ticket terms *
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Book Tickets</button>
+      <button type="reset">Reset Form</button>
+    </div>
+  </form>
+</body>
+</html>
